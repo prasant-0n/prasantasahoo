@@ -3,32 +3,34 @@
 @tailwind utilities;
 
 :root {
-  /* Graphite Dark Neutral Ramp (Damir Sokolovsky Unslop Tokens) */
-  --background: #141415;
+  /* Obsidian Dark Neutral Ramp (Linear / Vercel / Stripe Standard) */
+  --background: #090a0c;
   --foreground: #ededed;
-  --surface-50: #19191b;
-  --surface-100: #232325;
-  --surface-200: #2c2c30;
-  --surface-300: #36363c;
+  --surface-50: #121316;
+  --surface-100: #1a1b20;
+  --surface-200: #24252c;
+  --surface-300: #2e3039;
   --border: rgba(237, 237, 237, 0.08);
   --border-hover: rgba(237, 237, 237, 0.16);
+  --grid-line: rgba(237, 237, 237, 0.04);
   --muted: #a1a1a6;
   --muted-foreground: #85858b;
   --accent: #4cc38a;
-  --accent-foreground: #0f0f10;
+  --accent-foreground: #090a0c;
   --accent-muted: rgba(76, 195, 138, 0.08);
 }
 
 .light {
-  /* Graphite Light Neutral Ramp */
-  --background: #fafafa;
+  /* Studio Light Neutral Ramp */
+  --background: #fafafb;
   --foreground: #171717;
   --surface-50: #ffffff;
-  --surface-100: #f4f4f5;
-  --surface-200: #e4e4e7;
-  --surface-300: #d4d4d8;
+  --surface-100: #f4f4f6;
+  --surface-200: #e5e5ea;
+  --surface-300: #d4d4dc;
   --border: rgba(23, 23, 23, 0.08);
   --border-hover: rgba(23, 23, 23, 0.16);
+  --grid-line: rgba(23, 23, 23, 0.04);
   --muted: #52525b;
   --muted-foreground: #737373;
   --accent: #16a34a;
@@ -59,10 +61,40 @@ body {
   overflow-x: hidden;
 }
 
-/* Subtle dot matrix background texture */
+/* Architectural Grid Lattice with Radial Vignette Falloff Mask */
+.bg-grid-lattice {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: 
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 75% 55% at 50% 10%, black 25%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 55% at 50% 10%, black 25%, transparent 85%);
+}
+
+/* Ambient Top Aperture (Soft Monochromatic Light Cone) */
+.bg-ambient-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 620px;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(ellipse 70% 480px at 50% -60px, rgba(255, 255, 255, 0.032), transparent 75%);
+}
+
+.light .bg-ambient-top {
+  background: radial-gradient(ellipse 70% 480px at 50% -60px, rgba(0, 0, 0, 0.022), transparent 75%);
+}
+
+/* Backward-compatible quiet dot-grid */
 .dot-grid {
-  background-image: radial-gradient(var(--border) 1px, transparent 1px);
-  background-size: 24px 24px;
+  position: relative;
+  background-color: var(--background);
 }
 
 /* Tabular figures for microsecond metrics */
@@ -115,6 +147,8 @@ body {
   .no-print,
   button,
   .cmdk-trigger,
+  .bg-grid-lattice,
+  .bg-ambient-top,
   [data-sonner-toaster] {
     display: none !important;
   }

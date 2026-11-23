@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fafafa" },
-    { media: "(prefers-color-scheme: dark)", color: "#09090b" },
+    { media: "(prefers-color-scheme: light)", color: "#fafafb" },
+    { media: "(prefers-color-scheme: dark)", color: "#090a0c" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -77,8 +77,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col dot-grid`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col relative bg-background`}
       >
+        <div className="bg-ambient-top" aria-hidden="true" />
+        <div className="bg-grid-lattice" aria-hidden="true" />
         <Providers>{children}</Providers>
       </body>
     </html>
