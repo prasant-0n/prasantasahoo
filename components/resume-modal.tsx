@@ -13,6 +13,7 @@ import {
   Phone,
   MapPin,
   FileCheck,
+  Globe,
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 
@@ -281,6 +282,8 @@ export function ResumeModal({ open, onClose }: ResumeModalProps) {
                 <span>•</span>
                 <a href="mailto:pkumarsahoo025@gmail.com">pkumarsahoo025@gmail.com</a>
                 <span>•</span>
+                <a href="https://prasantasahoo.vercel.app">prasantasahoo.vercel.app</a>
+                <span>•</span>
                 <a href="https://github.com/prasant-0n">github.com/prasant-0n</a>
                 <span>•</span>
                 <a href="https://linkedin.com/in/prasant-0n">linkedin.com/in/prasant-0n</a>
@@ -486,6 +489,11 @@ export function ResumeModal({ open, onClose }: ResumeModalProps) {
                 <a href="mailto:pkumarsahoo025@gmail.com" className="flex items-center gap-1 hover:text-zinc-900 dark:hover:text-white transition-colors">
                   <Mail className="w-3 h-3 text-zinc-500" />
                   <span>pkumarsahoo025@gmail.com</span>
+                </a>
+                <span>•</span>
+                <a href="https://prasantasahoo.vercel.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-zinc-900 dark:hover:text-white transition-colors">
+                  <Globe className="w-3 h-3 text-zinc-500" />
+                  <span>prasantasahoo.vercel.app</span>
                 </a>
                 <span>•</span>
                 <a href="https://github.com/prasant-0n" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-zinc-900 dark:hover:text-white transition-colors">

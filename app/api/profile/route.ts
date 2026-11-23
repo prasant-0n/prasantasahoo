@@ -9,6 +9,7 @@ export async function GET() {
     contact: {
       email: "pkumarsahoo025@gmail.com",
       mobile: "+91 63726 86212",
+      portfolio: "https://prasantasahoo.vercel.app",
       github: "https://github.com/prasant-0n",
       linkedin: "https://linkedin.com/in/prasant-0n",
     },
