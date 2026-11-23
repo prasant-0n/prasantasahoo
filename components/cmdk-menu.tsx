@@ -86,7 +86,7 @@ export function CmdkMenu({ open, onOpenChange, onOpenResumeModal }: CmdkMenuProp
             <Command.Group heading="Recruiter fast actions" className="text-muted-foreground font-mono text-[10px] px-2 py-1">
               <Command.Item
                 onSelect={() => {
-                  window.open("/resume.pdf", "_blank");
+                  window.open("/Prasanta_Kumar_Sahoo_Resume.pdf", "_blank");
                   onOpenChange(false);
                 }}
                 className="flex items-center justify-between px-2.5 py-2 rounded-md hover:bg-surface-100 cursor-pointer text-foreground"
@@ -281,15 +281,15 @@ export function CmdkMenu({ open, onOpenChange, onOpenResumeModal }: CmdkMenuProp
             <Command.Group heading="Terminal &amp; CLI" className="text-muted-foreground font-mono text-[10px] px-2 py-1 mt-2">
               <Command.Item
                 onSelect={() => {
-                  navigator.clipboard.writeText("curl -s https://prasantasahoo.dev/api/profile");
-                  toast.success("Command copied: curl -s https://prasantasahoo.dev/api/profile");
+                  navigator.clipboard.writeText("curl -s https://prasantasahoo.vercel.app/api/profile");
+                  toast.success("Command copied: curl -s https://prasantasahoo.vercel.app/api/profile");
                   onOpenChange(false);
                 }}
                 className="flex items-center justify-between px-2.5 py-2 rounded-md hover:bg-surface-100 cursor-pointer text-foreground font-mono text-[11px]"
               >
                 <div className="flex items-center gap-2">
                   <Terminal className="w-4 h-4 text-muted-foreground" />
-                  <span>curl -s https://prasantasahoo.dev/api/profile</span>
+                  <span>curl -s https://prasantasahoo.vercel.app/api/profile</span>
                 </div>
                 <Copy className="w-3 h-3 text-muted-foreground" />
               </Command.Item>

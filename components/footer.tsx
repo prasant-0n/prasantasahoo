@@ -18,7 +18,7 @@ export function Footer() {
   const [copiedEmail, setCopiedEmail] = React.useState(false);
 
   const copyCli = () => {
-    navigator.clipboard.writeText("curl -s https://prasantasahoo.dev/api/profile");
+    navigator.clipboard.writeText("curl -s https://prasantasahoo.vercel.app/api/profile");
     setCopiedCli(true);
     toast.success("cURL command copied to clipboard");
     setTimeout(() => setCopiedCli(false), 2000);
@@ -128,8 +128,8 @@ export function Footer() {
 
               {/* Download ATS Resume */}
               <a
-                href="/resume.pdf"
-                download="Prasanta_Kumar_Sahoo_NodeJS_Backend_Developer_MCA2023_ImmediateJoiner.pdf"
+                href="/Prasanta_Kumar_Sahoo_Resume.pdf"
+                download="Prasanta_Kumar_Sahoo_Resume.pdf"
                 className="flex items-center gap-3 p-3.5 rounded-xl bg-surface-50 border border-hairline hover:border-hairline-hover transition-colors group"
               >
                 <div className="w-8 h-8 rounded-lg bg-surface-100 flex items-center justify-center text-foreground shrink-0">
@@ -169,7 +169,7 @@ export function Footer() {
               <div className="font-mono text-[11.5px] leading-relaxed text-muted-foreground space-y-1.5 overflow-x-auto p-4 rounded-xl bg-surface-100/60 dark:bg-[#09090a] border border-hairline transition-colors">
                 <div className="text-foreground flex items-center gap-1 font-semibold">
                   <span className="text-emerald-600 dark:text-emerald-400 font-bold">$</span>
-                  <span>curl -s https://prasantasahoo.dev/api/profile</span>
+                  <span>curl -s https://prasantasahoo.vercel.app/api/profile</span>
                 </div>
                 <div className="text-muted-foreground pt-1">
                   <span>{"{"}</span>

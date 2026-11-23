@@ -436,8 +436,8 @@ export function ResumeModal({ open, onClose }: ResumeModalProps) {
             </button>
 
             <a
-              href="/resume.pdf"
-              download="Prasanta_Kumar_Sahoo_NodeJS_Backend_Developer_MCA2023_ImmediateJoiner.pdf"
+              href="/Prasanta_Kumar_Sahoo_Resume.pdf"
+              download="Prasanta_Kumar_Sahoo_Resume.pdf"
               className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-foreground text-background text-xs font-medium hover:opacity-90 transition-opacity shadow-sm"
               title="Direct PDF download"
             >

@@ -81,8 +81,8 @@ export function Hero({ onOpenResumeModal }: HeroProps) {
           <div className="mt-8 sm:mt-10 flex flex-wrap items-center gap-2.5 sm:gap-3">
             {/* PDF ATS Resume Download */}
             <a
-              href="/resume.pdf"
-              download="Prasanta_Kumar_Sahoo_NodeJS_Backend_Developer_MCA2023_ImmediateJoiner.pdf"
+              href="/Prasanta_Kumar_Sahoo_Resume.pdf"
+              download="Prasanta_Kumar_Sahoo_Resume.pdf"
               className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-foreground text-background font-medium text-xs sm:text-sm hover:opacity-90 transition-opacity shadow-sm"
             >
               <FileDown className="w-4 h-4" />
