@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Graphite Dark Neutral Ramp (Damir Sokolovsky Unslop Tokens) */
+  --background: #141415;
+  --foreground: #ededed;
+  --surface-50: #19191b;
+  --surface-100: #232325;
+  --surface-200: #2c2c30;
+  --surface-300: #36363c;
+  --border: rgba(237, 237, 237, 0.08);
+  --border-hover: rgba(237, 237, 237, 0.16);
+  --muted: #a1a1a6;
+  --muted-foreground: #85858b;
+  --accent: #4cc38a;
+  --accent-foreground: #0f0f10;
+  --accent-muted: rgba(76, 195, 138, 0.08);
+}
+
+.light {
+  /* Graphite Light Neutral Ramp */
+  --background: #fafafa;
+  --foreground: #171717;
+  --surface-50: #ffffff;
+  --surface-100: #f4f4f5;
+  --surface-200: #e4e4e7;
+  --surface-300: #d4d4d8;
+  --border: rgba(23, 23, 23, 0.08);
+  --border-hover: rgba(23, 23, 23, 0.16);
+  --muted: #52525b;
+  --muted-foreground: #737373;
+  --accent: #16a34a;
+  --accent-foreground: #ffffff;
+  --accent-muted: rgba(22, 163, 74, 0.08);
+}
+
+* {
+  border-color: var(--border);
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Subtle dot matrix background texture */
+.dot-grid {
+  background-image: radial-gradient(var(--border) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Tabular figures for microsecond metrics */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Hairline border utilities */
+.border-hairline {
+  border: 1px solid var(--border);
+}
+
+.border-hairline-hover:hover {
+  border-color: var(--border-hover);
+}
+
+/* Custom quiet scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface-200);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--surface-300);
+}
+
+/* Print Stylesheet for Recruiter PDF Exports */
+@media print {
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Strictly hide all root website sections so they NEVER print across multiple pages */
+  header,
+  main,
+  footer,
+  nav,
+  .no-print,
+  button,
+  .cmdk-trigger,
+  [data-sonner-toaster] {
+    display: none !important;
+  }
+  
+  .border-hairline {
+    border-color: #d4d4d8 !important;
+  }
+}

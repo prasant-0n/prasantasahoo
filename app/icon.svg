@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <rect x="1" y="1" width="30" height="30" rx="7" fill="#0f0f11" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+  <line x1="7" y1="1.5" x2="25" y2="1.5" stroke="rgba(255,255,255,0.3)" stroke-linecap="round"/>
+  <!-- P Stem & Loop -->
+  <path d="M9.5 8.5v15M9.5 8.5h5.5a3.75 3.75 0 0 1 0 7.5H9.5" stroke="#ededed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- S Curve -->
+  <path d="M18 12.5h3.2a2.2 2.2 0 0 1 0 4.4h-2.8a2.2 2.2 0 0 0 0 4.4H22" stroke="#a1a1a6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Emerald Status Beacon -->
+  <circle cx="24.5" cy="7.5" r="3.5" fill="#10b981" opacity="0.25"/>
+  <circle cx="24.5" cy="7.5" r="2" fill="#34d399"/>
+</svg>
