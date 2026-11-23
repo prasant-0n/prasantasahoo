@@ -165,6 +165,39 @@ await prisma.$transaction(async (tx) => {
   },
 ];
 
+function highlightSyntaxLine(line: string) {
+  if (line.trim().startsWith("//")) {
+    return <span className="text-zinc-500 dark:text-zinc-500 italic">{line}</span>;
+  }
+
+  // Token regex for strings, keywords, SQL commands, types, and numbers
+  const tokenRegex = /(\/\/[^\n]*|`[^`]*`|"[^"]*"|'[^']*'|\b(?:await|async|export|function|const|let|if|throw|new|return|while|import|from|typeof|instanceof)\b|\b(?:SELECT|FROM|WHERE|FOR UPDATE)\b|\b(?:boolean|string|number|any|void|Promise|Request|Response|NextFunction|Node|Edge|SessionActor|ResourceContext|VaultRecord)\b|\b\d+(?:\.\d+)?\b)/g;
+
+  const parts = line.split(tokenRegex);
+  return parts.map((part, idx) => {
+    if (!part) return null;
+    if (part.startsWith("//")) {
+      return <span key={idx} className="text-zinc-500 dark:text-zinc-500 italic">{part}</span>;
+    }
+    if ((part.startsWith('"') && part.endsWith('"')) || (part.startsWith("'") && part.endsWith("'")) || (part.startsWith("`") && part.endsWith("`"))) {
+      return <span key={idx} className="text-emerald-600 dark:text-emerald-400">{part}</span>;
+    }
+    if (/^(await|async|export|function|const|let|if|throw|new|return|while|import|from|typeof|instanceof)$/.test(part)) {
+      return <span key={idx} className="text-violet-600 dark:text-violet-400 font-semibold">{part}</span>;
+    }
+    if (/^(SELECT|FROM|WHERE|FOR UPDATE)$/.test(part)) {
+      return <span key={idx} className="text-rose-600 dark:text-rose-400 font-bold">{part}</span>;
+    }
+    if (/^(boolean|string|number|any|void|Promise|Request|Response|NextFunction|Node|Edge|SessionActor|ResourceContext|VaultRecord)$/.test(part)) {
+      return <span key={idx} className="text-blue-600 dark:text-sky-400 font-medium">{part}</span>;
+    }
+    if (/^\d+(?:\.\d+)?$/.test(part)) {
+      return <span key={idx} className="text-amber-600 dark:text-amber-400 font-semibold">{part}</span>;
+    }
+    return <span key={idx}>{part}</span>;
+  });
+}
+
 export function WarStories() {
   const [activeTab, setActiveTab] = React.useState<string>("locking");
   const [copied, setCopied] = React.useState(false);
@@ -226,7 +259,7 @@ export function WarStories() {
       </div>
 
       {/* Story Card */}
-      <div className="rounded-2xl bg-surface-50 border border-hairline overflow-hidden">
+      <div className="rounded-2xl bg-surface-50 border border-hairline overflow-hidden transition-colors shadow-sm">
         {/* Story Metadata Banner */}
         <div className="p-6 sm:p-8 border-b border-hairline flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
@@ -271,10 +304,10 @@ export function WarStories() {
           </div>
         </div>
 
-        {/* Code Syntax Container */}
-        <div className="border-t border-hairline bg-surface-100/40 dark:bg-[#09090b]">
+        {/* Code Syntax Studio Container */}
+        <div className="border-t border-hairline bg-surface-100/40 dark:bg-[#09090b] transition-colors">
           {/* Code window chrome toolbar */}
-          <div className="flex items-center justify-between px-6 py-3 border-b border-hairline bg-surface-100/70 dark:bg-[#0d0d0f] text-xs font-mono text-muted-foreground">
+          <div className="flex items-center justify-between px-6 py-3 border-b border-hairline bg-surface-100/70 dark:bg-[#0d0d0f] text-xs font-mono text-muted-foreground transition-colors">
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]" />
@@ -290,10 +323,20 @@ export function WarStories() {
             </span>
           </div>
 
-          <div className="p-6 sm:p-8 overflow-x-auto font-mono text-xs leading-relaxed text-[#1e293b] dark:text-[#ededed]">
-            <pre className="selection:bg-emerald-500/20">
-              <code>{story.code}</code>
-            </pre>
+          {/* Syntax Highlighted Code Canvas with Precision Line Numbers */}
+          <div className="p-4 sm:p-6 overflow-x-auto font-mono text-xs leading-relaxed bg-[#f8f9fb] dark:bg-[#09090b] text-[#1e293b] dark:text-[#ededed] transition-colors">
+            <div className="table w-full border-collapse">
+              {story.code.split("\n").map((line, idx) => (
+                <div key={idx} className="table-row hover:bg-black/[0.03] dark:hover:bg-white/[0.04] transition-colors">
+                  <span className="table-cell select-none text-muted-foreground/40 font-mono text-[11px] text-right pr-4 py-0.5 w-8 shrink-0">
+                    {idx + 1}
+                  </span>
+                  <span className="table-cell whitespace-pre py-0.5">
+                    {highlightSyntaxLine(line)}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

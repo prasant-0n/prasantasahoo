@@ -156,8 +156,8 @@ export function Hero({ onOpenResumeModal }: HeroProps) {
         {/* Right Column: Executive Engineer Identity Credential Card */}
         <div className="lg:col-span-5 xl:col-span-5">
           <div className="rounded-2xl border border-hairline bg-surface-50 dark:bg-[#0f0f10] p-6 sm:p-7 shadow-sm dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08),0_12px_36px_rgba(0,0,0,0.5)] flex flex-col justify-between relative overflow-hidden transition-colors">
-            {/* Subtle top glare highlight */}
-            <div className="absolute top-0 left-1/4 right-1/4 h-[1px] bg-gradient-to-r from-transparent via-foreground/20 to-transparent pointer-events-none" />
+            {/* Subtle top glare highlight in dark mode */}
+            <div className="hidden dark:block absolute top-0 left-1/4 right-1/4 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
 
             {/* Header: Credential Authority & Security Status */}
             <div className="flex items-center justify-between pb-4 mb-5 border-b border-hairline text-xs font-mono">
@@ -167,8 +167,8 @@ export function Hero({ onOpenResumeModal }: HeroProps) {
                   SYS-ARCH CREDENTIAL #2023-097
                 </span>
               </div>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[11px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 ring-2 ring-emerald-500/20" />
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[11px] font-mono bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400 ring-2 ring-emerald-500/20" />
                 <span>0d Notice • Immediate</span>
               </span>
             </div>

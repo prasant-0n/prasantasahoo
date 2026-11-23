@@ -148,7 +148,7 @@ export function Footer() {
           </div>
 
           {/* Right Column: Live Terminal CLI Gateway (5 Cols on lg) */}
-          <div className="lg:col-span-5 rounded-2xl bg-surface-100/60 dark:bg-[#0f0f10] border border-hairline p-6 sm:p-8 flex flex-col justify-between transition-colors shadow-sm">
+          <div className="lg:col-span-5 rounded-2xl bg-surface-50 dark:bg-[#0f0f10] border border-hairline p-6 sm:p-8 flex flex-col justify-between transition-colors shadow-sm">
             {/* Terminal Window Chrome */}
             <div>
               <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-hairline text-xs font-mono text-muted-foreground">
@@ -166,19 +166,38 @@ export function Footer() {
               </div>
 
               {/* Terminal Code Body */}
-              <div className="font-mono text-[11px] leading-relaxed text-muted-foreground space-y-1.5 overflow-x-auto p-4 rounded-xl bg-surface-50 dark:bg-[#09090a] border border-hairline">
+              <div className="font-mono text-[11.5px] leading-relaxed text-muted-foreground space-y-1.5 overflow-x-auto p-4 rounded-xl bg-surface-100/60 dark:bg-[#09090a] border border-hairline transition-colors">
                 <div className="text-foreground flex items-center gap-1 font-semibold">
-                  <span className="text-emerald-500 font-bold">$</span>
+                  <span className="text-emerald-600 dark:text-emerald-400 font-bold">$</span>
                   <span>curl -s https://prasantasahoo.dev/api/profile</span>
                 </div>
                 <div className="text-muted-foreground pt-1">
                   <span>{"{"}</span>
-                  <div className="pl-3">
-                    <div><span className="text-foreground">"name"</span>: <span className="text-emerald-600 dark:text-emerald-400">"Prasanta Kumar Sahoo"</span>,</div>
-                    <div><span className="text-foreground">"role"</span>: <span className="text-emerald-600 dark:text-emerald-400">"Backend &amp; Full-Stack Systems Engineer"</span>,</div>
-                    <div><span className="text-foreground">"status"</span>: <span className="text-emerald-600 dark:text-emerald-400">"Immediate Joiner (0d)"</span>,</div>
-                    <div><span className="text-foreground">"metrics"</span>: {"{ "}<span className="text-foreground">"loc"</span>: <span className="text-amber-600 dark:text-amber-400 font-medium">76755</span>, <span className="text-foreground">"models"</span>: <span className="text-amber-600 dark:text-amber-400 font-medium">97</span>{" }"},</div>
-                    <div><span className="text-foreground">"email"</span>: <span className="text-emerald-600 dark:text-emerald-400">"pkumarsahoo025@gmail.com"</span></div>
+                  <div className="pl-3 space-y-0.5">
+                    <div>
+                      <span className="text-violet-600 dark:text-violet-400 font-medium">"name"</span>:{" "}
+                      <span className="text-emerald-600 dark:text-emerald-400">"Prasanta Kumar Sahoo"</span>,
+                    </div>
+                    <div>
+                      <span className="text-violet-600 dark:text-violet-400 font-medium">"role"</span>:{" "}
+                      <span className="text-emerald-600 dark:text-emerald-400">"Backend &amp; Full-Stack Systems Engineer"</span>,
+                    </div>
+                    <div>
+                      <span className="text-violet-600 dark:text-violet-400 font-medium">"status"</span>:{" "}
+                      <span className="text-emerald-600 dark:text-emerald-400">"Immediate Joiner (0d)"</span>,
+                    </div>
+                    <div>
+                      <span className="text-violet-600 dark:text-violet-400 font-medium">"metrics"</span>: {"{ "}
+                      <span className="text-violet-600 dark:text-violet-400 font-medium">"loc"</span>:{" "}
+                      <span className="text-amber-600 dark:text-amber-400 font-semibold">76755</span>,{" "}
+                      <span className="text-violet-600 dark:text-violet-400 font-medium">"models"</span>:{" "}
+                      <span className="text-amber-600 dark:text-amber-400 font-semibold">97</span>
+                      {" }"},
+                    </div>
+                    <div>
+                      <span className="text-violet-600 dark:text-violet-400 font-medium">"email"</span>:{" "}
+                      <span className="text-emerald-600 dark:text-emerald-400">"pkumarsahoo025@gmail.com"</span>
+                    </div>
                   </div>
                   <span>{"}"}</span>
                 </div>
